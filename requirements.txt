@@ -1,0 +1,6 @@
+numpy==1.17.3
+pandas==0.25.0
+matplotlib==2.0.2
+sklearn==0.21.3
+json==2.0.9
+diffprivlib
