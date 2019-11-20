@@ -1,0 +1,1 @@
+{"1": "Arrest for Violation", "2": "Citation", "3": "Verbal Warning", "4": "Warrant Arrest", "5": "Written Warning"}
