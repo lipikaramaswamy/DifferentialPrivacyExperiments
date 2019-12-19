@@ -9,11 +9,13 @@ Machine learning problems are widely solved using iterative optimization to mini
 
 <div style="text-align:center"><img src="images/abadi_dpsgd.png" alt="DP-SGD" width="250"/></div>
 
-A key component of such algorithms is tracking privacy loss. Basic and advanced composition lead to a fast accumulation of privacy loss. Here, we incorporate information about the algorithm, such as, in each epoch, only a batch of data is used for training. Further, we use the moments accountant, where privacy loss is treated as a random variable and higher moments are used to obtain a tighter bound on privacy loss. Overall, given <img src="https://latex.codecogs.com/gif.latex?$\delta$" title="$\delta$" />, the probability of failure of the differentially private mechanism, we can get an upper bound on the privacy loss, <img src="https://latex.codecogs.com/gif.latex?$\delta$" title="$\epsilon$" />,
-
+A key component of such algorithms is tracking privacy loss. Basic and advanced composition lead to a fast accumulation of privacy loss. Here, we incorporate information about the algorithm, such as, in each epoch, only a batch of data is used for training. Further, we use the moments accountant, where privacy loss is treated as a random variable and higher moments are used to obtain a tighter bound on privacy loss. Overall, given <img src="https://latex.codecogs.com/gif.latex?$\delta$" title="$\delta$" />, the probability of failure of the differentially private mechanism, we can get an upper bound on the privacy loss, <img src="https://latex.codecogs.com/gif.latex?$\varepsilon$" title="$\epsilon$" />,
 
 <div style="text-align:center"><img src="https://latex.codecogs.com/png.latex?$$\varepsilon&space;\le&space;C&space;\cdot&space;\frac{L/N}{\sigma}&space;\sqrt{T\cdot&space;log\left(1/\delta&space;\right&space;)}&space;$$" title="$$\varepsilon \le C \cdot \frac{L/N}{\sigma} \sqrt{T\cdot log\left(1/\delta \right )} $$" /></div>
 
+Results on different datasets can be seen in the notebooks `notebooks/logistic_regression-syn_data.ipynb` and  `notebooks/logistic_regression-breast_cancer.ipynb`.
+
+Note that some implementations of DP Logistic Regression are already available, such as that provided by IBM's `DiffPrivLib`. The mechanisms here implement the vector mechanism for objective perturbation as described by [Chaudhuri et al.](https://pdfs.semanticscholar.org/a188/d2ac0d10bdd4d4a04c92cdc76523e11c155c.pdf). A quick exploration of this library is also provided in this repo under `ibm-diffprivlib`.
 
 
-Here, we implement the moments accountant, which allows a tighter bound on privacy loss by incorporating information about the algorithm (such as, in each epoch, only a batch of data is used for training).
+Forthcoming work includes selection of hyperparameters following the methodology of [Talwar and Liu 2019](https://arxiv.org/pdf/1811.07971.pdf).
