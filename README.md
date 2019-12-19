@@ -9,6 +9,11 @@ Machine learning problems are widely solved using iterative optimization to mini
 
 <div style="text-align:center"><img src="images/abadi_dpsgd.png" alt="DP-SGD" width="250"/></div>
 
-A key component of such algorithms is tracking privacy loss. Basic and advanced composition lead to a fast accumulation of privacy loss. Here, we incorporate information about the algorithm, such as, in each epoch, only a batch of data is used for training. Further, we use the moments accountant, where privacy loss is treated as a random variable and higher moments are used to obtain a tighter bound on privacy loss. Overall, given <img src="https://latex.codecogs.com/gif.latex?$\delta$" title="$\delta$" /> the probability of failure of the differentially private mechanism, 
+A key component of such algorithms is tracking privacy loss. Basic and advanced composition lead to a fast accumulation of privacy loss. Here, we incorporate information about the algorithm, such as, in each epoch, only a batch of data is used for training. Further, we use the moments accountant, where privacy loss is treated as a random variable and higher moments are used to obtain a tighter bound on privacy loss. Overall, given <img src="https://latex.codecogs.com/gif.latex?$\delta$" title="$\delta$" />, the probability of failure of the differentially private mechanism, we can get an upper bound on the privacy loss, <img src="https://latex.codecogs.com/gif.latex?$\delta$" title="$\epsilon$" />,
+
+
+<div style="text-align:center"><img src="https://latex.codecogs.com/png.latex?$$\varepsilon&space;\le&space;C&space;\cdot&space;\frac{L/N}{\sigma}&space;\sqrt{T\cdot&space;log\left(1/\delta&space;\right&space;)}&space;$$" title="$$\varepsilon \le C \cdot \frac{L/N}{\sigma} \sqrt{T\cdot log\left(1/\delta \right )} $$" /></div>
+
+
 
 Here, we implement the moments accountant, which allows a tighter bound on privacy loss by incorporating information about the algorithm (such as, in each epoch, only a batch of data is used for training).
